@@ -1,4 +1,5 @@
 
+
 def trimLeadingZeros(s):
     firstOne = s.find('1')
 
