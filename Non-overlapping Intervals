@@ -1,0 +1,14 @@
+class Solution:
+    def minRemoval(self, intervals):
+        # Sort intervals by their end time
+        intervals.sort(key=lambda x: x[1])
+        cnt = 0
+        end = float('-inf')  # Initialize to negative infinity to allow any interval to start
+
+        for interval in intervals:
+            if interval[0] < end:  # Overlap found
+                cnt += 1
+            else:
+                end = interval[1]  # Update the end to the current interval's end
+
+        return cnt
